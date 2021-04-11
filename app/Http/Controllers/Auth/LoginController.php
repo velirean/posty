@@ -25,8 +25,12 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        if (!Auth::attempt($request->only('email', 'password')))
-        {
+        // When remember is selected a remember_web token is created
+        // and stored in the database
+        if (!Auth::attempt(
+            $request->only('email', 'password'),
+            $request->remember
+        )) {
             return back()->with('status', 'Invalid login details');
         }
 
