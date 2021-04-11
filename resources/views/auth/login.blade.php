@@ -17,7 +17,8 @@
                     <input type="email" name="email" id="email"
                     placeholder="Your email" value="{{ old('email') }}"
                     class="bg-gray-100 border-2 w-full p-4 rounded-lg
-                    @error('email') border-red-500 @enderror">
+                    @error('email') border-red-500 @enderror"
+                    autofocus>
 
                     @error('email')
                         <div class="text-red-500 mt-2 text-sm">
